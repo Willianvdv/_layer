@@ -10,6 +10,8 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:identifier, :attributes)
+    params.require(:user).permit(:identifier).tap do |whitelisted|
+      whitelisted[:properties] = params[:user][:properties]
+    end
   end
 end

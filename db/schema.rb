@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20140126134911) do
 
   create_table "users", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.string   "identifier"
-    t.hstore   "attributes"
+    t.hstore   "properties"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
