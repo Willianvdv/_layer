@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "create a user" do
+    get :create, format: :json, user: {identifier: 'test@example.com'}
+    p json_reponse
+  end
 end
