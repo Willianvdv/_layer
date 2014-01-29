@@ -6,6 +6,7 @@ gem 'rails-api'
 gem 'active_model_serializers'
 
 gem 'pg'
+gem 'coveralls', require: false
 
 group :development, :test do
   gem 'factory_girl'
