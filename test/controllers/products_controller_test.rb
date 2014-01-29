@@ -27,7 +27,7 @@ class ProductsControllerTest < ActionController::TestCase
   end
 
   # Errors when creating a product
-  test "create a product without name" do
+  test "create a product without name fails" do
     post :create, format: :json, product: {name: nil}
     assert_response :bad_request
     assert json_response["errors"].has_key? "name"
@@ -40,7 +40,7 @@ class ProductsControllerTest < ActionController::TestCase
   end
 
   # Update an product with error
-  test "update a product without name" do
+  test "update a product without name fails" do
     put :update, format: :json, id: @product.id, product: {name: nil}
     assert_response :bad_request
     assert json_response["errors"].has_key? "name"
