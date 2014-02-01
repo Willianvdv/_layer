@@ -1,33 +1,33 @@
 # -*- encoding : utf-8 -*-
 
-class ProductsController < ApplicationController
-  before_filter :load_product, only: [:update]
+class ItemsController < ApplicationController
+  before_filter :load_item, only: [:update]
   
   def create
-    product = Product.new product_params
-    if product.save
-      render json: product
+    item = Item.new item_params
+    if item.save
+      render json: item
     else
-      render status: :bad_request, json: {errors: product.errors}
+      render status: :bad_request, json: {errors: item.errors}
     end
   end
 
   def update
-    if @product.update product_params
-      render json: @product
+    if @item.update item_params
+      render json: @item
     else
-      render status: :bad_request, json: {errors: @product.errors}
+      render status: :bad_request, json: {errors: @item.errors}
     end
   end
 
   private
-  def load_product
-    @product = Product.find params[:id]
+  def load_item
+    @item = Item.find params[:id]
   end
 
-  def product_params
-    params.require(:product).permit(:name).tap do |whitelisted|
-      whitelisted[:properties] = params[:product][:properties]
+  def item_params
+    params.require(:item).permit(:name).tap do |whitelisted|
+      whitelisted[:properties] = params[:item][:properties]
     end
   end
 end

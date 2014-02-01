@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class ProductsControllerTest < ActionController::TestCase
+class ItemsControllerTest < ActionController::TestCase
   def setup
     @item = create :item
   end
