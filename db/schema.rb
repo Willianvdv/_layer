@@ -11,12 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140127210108) do
+ActiveRecord::Schema.define(version: 20140129212542) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
   enable_extension "hstore"
+
+  create_table "events", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
+    t.string  "product_id"
+    t.string  "user_id"
+    t.string   "event"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "events", ["product_id"], name: "index_events_on_product_id", using: :btree
 
   create_table "products", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.string   "name"
