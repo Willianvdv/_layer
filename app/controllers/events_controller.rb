@@ -10,6 +10,6 @@ class EventsController < ApplicationController
 
   private
   def event_params
-    params.require('event').permit(:user_id, :product_id, :event)
+    params.require('event').permit(:user_id, :item_id, :event)
   end
 end
