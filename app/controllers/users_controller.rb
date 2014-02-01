@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if user.save
       render json: user
     else
-      render status: :bad_request, json: {errors: user.errors}
+      render status: :bad_request, json: { errors: user.errors }
     end
   end
 
@@ -16,11 +16,12 @@ class UsersController < ApplicationController
     if @user.update user_params
       render json: @user
     else
-      render status: :bad_request, json: {errors: @user.errors}
+      render status: :bad_request, json: { errors: @user.errors }
     end
   end
 
   private
+  
   def load_user
     @user = User.find params[:id]
   end

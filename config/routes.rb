@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 Personal::Application.routes.draw do
   resources :events, except: [:new, :edit]
   resources :items, except: [:new, :edit]

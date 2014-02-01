@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # Be sure to restart your server when you modify this file.
 
 # Your secret key for verifying the integrity of signed cookies.
@@ -16,9 +17,8 @@
 # Using secret_token for rails3 compatibility. Change to secret_key_base
 # to avoid deprecation warning.
 # Can be safely removed in a rails3 api-only application.
-
-Personal::Application.config.secret_key_base = if Rails.env.development? or Rails.env.test?
-  ('x' * 30) # meets minimum requirement of 30 chars long
+if Rails.env.development? or Rails.env.test?
+  Personal::Application.config.secret_key_base = ('x' * 30) 
 else
-  ENV['SECRET_TOKEN']
+  Personal::Application.config.secret_key_base = ENV['SECRET_TOKEN']
 end

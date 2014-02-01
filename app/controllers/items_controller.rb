@@ -16,11 +16,12 @@ class ItemsController < ApplicationController
     if @item.update item_params
       render json: @item
     else
-      render status: :bad_request, json: {errors: @item.errors}
+      render status: :bad_request, json: { errors: @item.errors }
     end
   end
 
   private
+
   def load_item
     @item = Item.find params[:id]
   end

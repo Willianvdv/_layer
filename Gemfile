@@ -11,4 +11,5 @@ gem 'figaro'
 
 group :development, :test do
   gem 'factory_girl'
+  gem 'rubocop'
 end
