@@ -1,6 +1,6 @@
 FactoryGirl.define do
-  factory :product do
-    name 'product name'
+  factory :item do
+    name 'item name'
     properties { {color: 'blue'} }
   end
 end
