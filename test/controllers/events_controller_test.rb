@@ -46,5 +46,4 @@ class EventsControllerTest < ActionController::TestCase
     assert_response :bad_request
     assert json_response['errors'].key? 'event'
   end
-
 end

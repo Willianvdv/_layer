@@ -2,13 +2,13 @@
 
 class ItemsController < ApplicationController
   before_filter :load_item, only: [:update]
-  
+
   def create
     item = Item.new item_params
     if item.save
       render json: item
     else
-      render status: :bad_request, json: {errors: item.errors}
+      render status: :bad_request, json: { errors: item.errors }
     end
   end
 
