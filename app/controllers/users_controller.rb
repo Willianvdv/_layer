@@ -1,7 +1,10 @@
 # -*- encoding : utf-8 -*-
 
 class UsersController < ApplicationController
+  include PermittedAttributes
+  
   before_filter :load_user, only: [:update]
+
 
   def create
     user = User.new user_params
@@ -24,11 +27,5 @@ class UsersController < ApplicationController
 
   def load_user
     @user = User.find params[:id]
-  end
-
-  def user_params
-    params.require(:user).permit(:identifier).tap do |whitelisted|
-      whitelisted[:properties] = params[:user][:properties]
-    end
   end
 end

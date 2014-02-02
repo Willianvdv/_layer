@@ -8,10 +8,4 @@ class EventsController < ApplicationController
       render status: :bad_request, json: { errors: event.errors }
     end
   end
-
-  private
-
-  def event_params
-    params.require('event').permit(:user_id, :item_id, :event)
-  end
 end

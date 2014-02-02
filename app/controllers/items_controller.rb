@@ -25,10 +25,4 @@ class ItemsController < ApplicationController
   def load_item
     @item = Item.find params[:id]
   end
-
-  def item_params
-    params.require(:item).permit(:name).tap do |whitelisted|
-      whitelisted[:properties] = params[:item][:properties]
-    end
-  end
 end
