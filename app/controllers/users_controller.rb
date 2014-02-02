@@ -1,10 +1,7 @@
 # -*- encoding : utf-8 -*-
 
 class UsersController < ApplicationController
-  include PermittedAttributes
-  
   before_filter :load_user, only: [:update]
-
 
   def create
     user = User.new user_params
