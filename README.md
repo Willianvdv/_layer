@@ -1,2 +1,2 @@
 [![Build Status](https://travis-ci.org/Willianvdv/l4y4r.png)](https://travis-ci.org/Willianvdv/l4y4r)
-[![Coverage Status](https://coveralls.io/repos/Willianvdv/personal/badge.png?branch=master)](https://coveralls.io/r/Willianvdv/personal?branch=master)
+[![Coverage Status](https://coveralls.io/repos/Willianvdv/layer/badge.png?branch=master)](https://coveralls.io/r/Willianvdv/layer?branch=master)

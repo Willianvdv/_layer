@@ -8,13 +8,12 @@ common: &common
 
 development:
   <<: *common
-  database: personal_development
+  database: layer_development
 
 test:
   <<: *common
-  database: personal_test
+  database: layer_test
 
 production:
   <<: *common
-  database: personal_production
- 
+  database: layer_production

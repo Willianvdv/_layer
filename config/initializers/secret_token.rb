@@ -18,7 +18,7 @@
 # to avoid deprecation warning.
 # Can be safely removed in a rails3 api-only application.
 if Rails.env.development? or Rails.env.test?
-  Personal::Application.config.secret_key_base = ('x' * 30) 
+  Layer::Application.config.secret_key_base = ('x' * 30) 
 else
-  Personal::Application.config.secret_key_base = ENV['SECRET_TOKEN']
+  Layer::Application.config.secret_key_base = ENV['SECRET_TOKEN']
 end

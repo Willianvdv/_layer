@@ -7,7 +7,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
-module Personal
+module Layer
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -22,6 +22,6 @@ module Personal
     config.i18n.default_locale = :en
     config.i18n.enforce_available_locales = true
 
-    config.autoload_paths += %W(#{config.root}/lib #{config.root}/lib/personal)
+    config.autoload_paths += %W(#{config.root}/lib #{config.root}/lib/layer)
   end
 end
