@@ -1,4 +1,4 @@
-# -*- encoding : utf-8 -*-
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,22 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140129212542) do
+ActiveRecord::Schema.define(version: 20140127214409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
   enable_extension "hstore"
 
-  create_table "events", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
-    t.string  "item_id"
-    t.string  "user_id"
-    t.string   "event"
+  create_table "actions", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "item_id"
+    t.string   "action"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "events", ["item_id"], name: "index_events_on_item_id", using: :btree
 
   create_table "items", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.string   "name"

@@ -1,7 +1,7 @@
 module PermittedAttributes
-  @@user_attributes = [:identifier,]
-  @@item_attributes = [:name,]
-  @@event_attributes = [:user_id, :item_id, :event,]
+  @@user_attributes = [:identifier]
+  @@item_attributes = [:name]
+  @@event_attributes = [:user_id, :item_id, :event]
 
   def user_params
     params.require(:user).permit(@@user_attributes).tap do |whitelisted|
