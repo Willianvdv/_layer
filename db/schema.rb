@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 20140127214409) do
   enable_extension "uuid-ossp"
   enable_extension "hstore"
 
-  create_table "actions", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "item_id"
-    t.string   "action"
+  create_table "events", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
+    t.uuid     "user_id"
+    t.uuid     "item_id"
+    t.string   "event"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
