@@ -1,3 +1,5 @@
+# -*- encoding : utf-8 -*-
+
 class ResourceController < ApplicationController
   def create
     resource = model_class.new resource_params

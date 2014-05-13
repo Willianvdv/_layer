@@ -1,4 +1,5 @@
 # -*- encoding : utf-8 -*-
+
 class Event < ActiveRecord::Base
   validates :item, presence: true
   validates :user, presence: true
