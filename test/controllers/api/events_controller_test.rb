@@ -15,8 +15,8 @@ class Api::EventsControllerTest < ActionController::TestCase
   end
 
   def event_attributes
-    { user_identifier: @user.id,
-      item_identifier: @item.id,
+    { user_identifier: @user.identifier,
+      item_identifier: @item.identifier,
       event: 'view' }
   end
 

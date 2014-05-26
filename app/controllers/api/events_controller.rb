@@ -13,8 +13,6 @@ module Api
         item_identifier = attributes.delete('item_identifier')
         attributes[:item] = Item.find_by identifier: item_identifier
 
-        p attributes
-
         attributes
       end
   end
