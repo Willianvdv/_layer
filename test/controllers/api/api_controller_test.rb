@@ -2,19 +2,23 @@
 
 require 'test_helper'
 
-class AnonymousController < ApplicationController
-  def index
-    render nothing: true
+module Api
+  class AnonymousController < ApiController
+    def index
+      render nothing: true
+    end
   end
 end
 
-class ApplicationControllerTest < ActionController::TestCase
-  tests AnonymousController
+class Api::ApiControllerTest < ActionController::TestCase
+  tests Api::AnonymousController
 
   def with_anonymous_routes(&block)
     with_routing do |set|
       set.draw do
-        get 'anonymous', to: 'anonymous#index'
+        namespace :api do
+          get 'anonymous', to: 'anonymous#index'
+        end
       end
 
       yield

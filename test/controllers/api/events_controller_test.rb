@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class EventsControllerTest < ActionController::TestCase
+class Api::EventsControllerTest < ActionController::TestCase
   def setup
     @user = create :user
     @item = create :item

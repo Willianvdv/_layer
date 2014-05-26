@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class ItemsControllerTest < ActionController::TestCase
+class Api::ItemsControllerTest < ActionController::TestCase
   def setup
     @item = create :item
     stub_authentication
