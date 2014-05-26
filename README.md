@@ -19,6 +19,12 @@ bundle exec rake test
 bundle exec rails s
 ```
 
+## Deploy
+
+```
+bundle exec cap <stage> deploy
+```
+
 ## Usage
 
 ### Push data to the layer endpoints
