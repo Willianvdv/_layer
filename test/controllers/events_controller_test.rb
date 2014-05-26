@@ -6,6 +6,8 @@ class EventsControllerTest < ActionController::TestCase
   def setup
     @user = create :user
     @item = create :item
+
+    stub_authentication
   end
 
   def json_response

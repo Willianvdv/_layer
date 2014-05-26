@@ -5,6 +5,7 @@ require 'test_helper'
 class UsersControllerTest < ActionController::TestCase
   def setup
     @user = create :user
+    stub_authentication
   end
 
   def json_response
