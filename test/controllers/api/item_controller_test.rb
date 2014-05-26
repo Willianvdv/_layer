@@ -13,7 +13,7 @@ class Api::ItemsControllerTest < ActionController::TestCase
   end
 
   def item_attributes
-    { name: 'item 1', properties: { color: 'red' } }
+    { identifier: 'sku_123', name: 'item 1', properties: { color: 'red' } }
   end
 
   # Create an item

@@ -37,6 +37,7 @@ curl -H "Content-Type: application/json" -d '{"user": {"identifier": "1234", "pr
 #### Item data `/api/items`
 
 Fields:
+- identifier:string (mandatory)
 - name:string (mandatory)
 - properties:hash
 

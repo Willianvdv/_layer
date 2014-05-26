@@ -1,6 +1,6 @@
 module PermittedAttributes
   @@user_attributes = [:identifier]
-  @@item_attributes = [:name]
+  @@item_attributes = [:identifier, :name]
   @@event_attributes = [:user_id, :item_id, :event]
 
   def user_params
