@@ -3,7 +3,7 @@
 module Api
   class ResourceController < ApiController
     def create
-      resource = model_class.new resource_params
+      resource = model_class.new resource_attributes
       if resource.save
         render json: resource
       else
@@ -20,6 +20,11 @@ module Api
     end
 
     protected
+
+      def resource_attributes
+        # Extend this method for custom model attributes
+        resource_params
+      end
 
       def resource_params
         public_send "#{controller_name.tableize.singularize}_params"

@@ -15,7 +15,9 @@ class Api::EventsControllerTest < ActionController::TestCase
   end
 
   def event_attributes
-    { user_id: @user.id, item_id: @item.id, event: 'view' }
+    { user_identifier: @user.id,
+      item_identifier: @item.id,
+      event: 'view' }
   end
 
   # Create an event
@@ -28,16 +30,16 @@ class Api::EventsControllerTest < ActionController::TestCase
 
   # When creating an event a user must be given
   test 'create a event without a user fails' do
-    event_attributes_without_a_user = event_attributes.merge(user_id: nil)
-    post :create, format: :json, event: event_attributes_without_a_user
+    invalid_event_attributes = event_attributes.merge(user_identifier: nil)
+    post :create, format: :json, event: invalid_event_attributes
     assert_response :bad_request
     assert json_response['errors'].key? 'user'
   end
 
   # When creating an event a item must be given
   test 'create a event without a item fails' do
-    event_attributes_without_a_item = event_attributes.merge(item_id: nil)
-    post :create, format: :json, event: event_attributes_without_a_item
+    invalid_event_attributes = event_attributes.merge(item_identifier: nil)
+    post :create, format: :json, event: invalid_event_attributes
     assert_response :bad_request
     assert json_response['errors'].key? 'item'
   end
