@@ -15,5 +15,6 @@ group :development, :test do
   gem 'mocha'
 end
 
-gem 'capistrano', '~> 3.2.0'
-gem 'capistrano-rails', '~> 1.1'
+group :production do
+  gem 'rails_12factor'
+end
