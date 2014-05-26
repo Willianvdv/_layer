@@ -12,14 +12,7 @@ class ApiKeys
   private
 
     def keys
-      key_file['API_KEYS']
+      ENV['api_keys']
     end
-
-    def api_key_file
-      Rails.root.join('config', 'api_keys.yml')
-    end
-
-    def key_file
-      YAML.load_file api_key_file
-    end
+    
 end
