@@ -53,7 +53,7 @@ Fields:
 - item_identifier:string (mandatory)
 - event:string (mandatory)
 
-##### Create a new event
+##### Create a new event `/api/events`
 
 ```
 curl -H "Content-Type: application/json" -d '{"event": {"user_identifier": "1234", "item_identifier": "sku23", "event": "view"}}' http://localhost:3000/api/events\?api_key\=123
