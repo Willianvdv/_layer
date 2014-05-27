@@ -25,13 +25,9 @@ class Api::ApiControllerTest < ActionController::TestCase
     end
   end
 
-  setup do
-    ApiKeys.any_instance.stubs(:keys).returns(['1234'])
-  end
-
   test 'with an api key you have access' do
     with_anonymous_routes do
-      get :index, api_key: '1234'
+      get :index, api_key: 'ABCDE'
       assert_response :success
     end
   end

@@ -1,2 +1,7 @@
-api_keys:
-  - '12345'
+development:
+  api_keys:
+    - ABCDE
+
+test:
+  api_keys:
+    - ABCDE
