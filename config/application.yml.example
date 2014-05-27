@@ -1,7 +1,5 @@
 development:
-  api_keys:
-    - ABCDE
+  api_keys: "ABCDE,"
 
 test:
-  api_keys:
-    - ABCDE
+  api_keys: "ABCDE,"
