@@ -11,8 +11,7 @@ class ApiKeys
 
   private
 
-    def keys
-      ENV['api_keys'].split(',')
-    end
-
+  def keys
+    ENV['api_keys'].split(',')
+  end
 end

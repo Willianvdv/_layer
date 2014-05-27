@@ -13,7 +13,7 @@ end
 class Api::ApiControllerTest < ActionController::TestCase
   tests Api::AnonymousController
 
-  def with_anonymous_routes(&block)
+  def with_anonymous_routes
     with_routing do |set|
       set.draw do
         namespace :api do

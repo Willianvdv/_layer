@@ -21,21 +21,21 @@ module Api
 
     protected
 
-      def resource_attributes
-        # Extend this method for custom model attributes
-        resource_params
-      end
+    def resource_attributes
+      # Extend this method for custom model attributes
+      resource_params
+    end
 
-      def resource_params
-        public_send "#{controller_name.tableize.singularize}_params"
-      end
+    def resource_params
+      public_send "#{controller_name.tableize.singularize}_params"
+    end
 
-      def load_resource
-        @resource = model_class.find params[:id]
-      end
+    def load_resource
+      @resource = model_class.find params[:id]
+    end
 
-      def model_class
-        controller_name.classify.constantize
-      end
+    def model_class
+      controller_name.classify.constantize
+    end
   end
 end

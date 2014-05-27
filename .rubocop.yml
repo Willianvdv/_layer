@@ -1,10 +1,13 @@
 AllCops:
   Excludes:
-    - db/**
-    - config/**
+    - db/**/*
+    - config/**/*
 
 Documentation:
   Enabled: false
 
 Encoding:
+  Enabled: false
+
+ClassAndModuleChildren:
   Enabled: false
