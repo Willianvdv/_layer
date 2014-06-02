@@ -59,6 +59,8 @@ Fields:
 - item_identifier:string (mandatory)
 - event:string (mandatory)
 
+When an user_identifier / item_identifier is given and they don't exists. These objects will be created
+
 ##### Create a new event
 
 ```
