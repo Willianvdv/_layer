@@ -7,13 +7,23 @@ module Api
       def resource_attributes
         attributes = super
 
-        user_identifier = attributes.delete('user_identifier')
-        attributes[:user] = User.find_by identifier: user_identifier
+        if (user_identifier = attributes.delete('user_identifier'))
+          attributes[:user] = find_or_create_user user_identifier
+        end
 
-        item_identifier = attributes.delete('item_identifier')
-        attributes[:item] = Item.find_by identifier: item_identifier
+        if (item_identifier = attributes.delete('item_identifier'))
+          attributes[:item] = find_or_create_item(item_identifier)
+        end
 
         attributes
+      end
+
+      def find_or_create_item(item_identifier)
+        Item.where(identifier: item_identifier).first_or_create!
+      end
+
+      def find_or_create_user(user_identifier)
+        User.where(identifier: user_identifier).first_or_create!
       end
   end
 end

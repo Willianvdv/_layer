@@ -44,7 +44,7 @@ curl -H "Content-Type: application/json" -d '{"user": {"identifier": "1234", "pr
 
 Fields:
 - identifier:string (mandatory)
-- name:string (mandatory)
+- name:string
 - properties:hash
 
 ##### Create a new item

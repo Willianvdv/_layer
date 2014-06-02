@@ -28,6 +28,20 @@ class Api::EventsControllerTest < ActionController::TestCase
     assert_equal 'view', json_response['event']['event']
   end
 
+  test 'a event is created and the item is unknown the item will be created' do
+    item_attr = { item_identifier: 'UNKNOWN_ITEM_ID' }
+    event_attributes_with_an_unknown_item = event_attributes.merge(item_attr)
+    post :create, format: :json, event: event_attributes_with_an_unknown_item
+    assert_response :success
+  end
+
+  test 'a event is created and the user is unknown the user will be created' do
+    user_attr = { user_identifier: 'UNKNOWN_USER_ID' }
+    event_attributes_with_an_unknown_item = event_attributes.merge(user_attr)
+    post :create, format: :json, event: event_attributes_with_an_unknown_item
+    assert_response :success
+  end
+
   # When creating an event a user must be given
   test 'create a event without a user fails' do
     invalid_event_attributes = event_attributes.merge(user_identifier: nil)
@@ -45,7 +59,7 @@ class Api::EventsControllerTest < ActionController::TestCase
   end
 
   # When creating an event a item must be given
-  test 'create a event without a event type fails' do
+  test 'create an event without a event type fails' do
     event_attributes_without_a_item = event_attributes.merge(event: nil)
     post :create, format: :json, event: event_attributes_without_a_item
     assert_response :bad_request
