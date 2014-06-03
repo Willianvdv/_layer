@@ -30,13 +30,6 @@ class Api::ApiControllerTest < ActionController::TestCase
     end
   end
 
-  test 'with an normal key you dont have access to indexes' do
-    with_anonymous_routes do
-      get :index, api_key: 'ABCDE'
-      assert_response :unauthorized
-    end
-  end
-
   test 'with an api key you have access' do
     with_anonymous_routes do
       get :create, api_key: 'ABCDE'
@@ -47,6 +40,13 @@ class Api::ApiControllerTest < ActionController::TestCase
   test 'without an api key you dont have access' do
     with_anonymous_routes do
       get :create
+      assert_response :unauthorized
+    end
+  end
+
+  test 'with an normal key you can only create stuff' do
+    with_anonymous_routes do
+      get :index, api_key: 'ABCDE'
       assert_response :unauthorized
     end
   end
