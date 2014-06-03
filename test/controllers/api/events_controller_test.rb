@@ -52,25 +52,10 @@ class Api::EventsControllerTest < ActionController::TestCase
   end
 
   class EventIsNotCreated < Api::EventsControllerTest
-    test 'create a event without a user fails' do
-      invalid_event_attributes = event_attributes.merge(user_identifier: nil)
-      post :create, format: :json, event: invalid_event_attributes
+    test 'create a event without attributes fails' do
+      post :create, format: :json, event: {x: :y}
       assert_response :bad_request
-      assert json_response['errors'].key? 'user'
-    end
-
-    test 'create a event without a item fails' do
-      invalid_event_attributes = event_attributes.merge(item_identifier: nil)
-      post :create, format: :json, event: invalid_event_attributes
-      assert_response :bad_request
-      assert json_response['errors'].key? 'item'
-    end
-
-    test 'create an event without a event type fails' do
-      event_attributes_without_a_item = event_attributes.merge(event: nil)
-      post :create, format: :json, event: event_attributes_without_a_item
-      assert_response :bad_request
-      assert json_response['errors'].key? 'event'
+      assert json_response.key? 'errors'
     end
   end
 end
