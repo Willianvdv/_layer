@@ -12,7 +12,7 @@ class Api::EventsControllerTest < ActionController::TestCase
   end
 
   def json_response
-    JSON.parse(response.body)
+    JSON.parse response.body
   end
 
   class EventIndexTest < Api::EventsControllerTest
