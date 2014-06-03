@@ -9,7 +9,7 @@ module Api
     protected
 
     def authenticate_user!
-      head :unauthorized unless ApiKey.instance.include? params['api_key']
+      head :unauthorized unless ApiKey.key? params['api_key']
     end
   end
 end

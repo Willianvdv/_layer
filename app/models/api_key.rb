@@ -9,6 +9,10 @@ class ApiKey
     @keys.include? key
   end
 
+  def self.key?(key)
+    instance.include? key
+  end
+
   private
 
   def keys

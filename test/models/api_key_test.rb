@@ -2,7 +2,11 @@
 require 'test_helper'
 
 class ApiKeyTest < ActiveSupport::TestCase
-  test 'gets the api keys' do
-    assert_equal ['ABCDE'], ApiKey.instance.send(:keys)
+  test 'a valid api key is given' do
+    assert ApiKey.key? 'ABCDE'
+  end
+
+  test 'an invalid api key is given' do
+    refute ApiKey.key? 'NOT_AN_API_KEY'
   end
 end

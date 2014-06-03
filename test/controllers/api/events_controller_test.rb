@@ -30,7 +30,7 @@ class Api::EventsControllerTest < ActionController::TestCase
 
     test 'the item is unknown so it will be created' do
       unknown_item_identifier = 'UNKNOWN_ITEM_ID'
-      item_attr = { item_identifier:unknown_item_identifier }
+      item_attr = { item_identifier: unknown_item_identifier }
       event_attributes_with_an_unknown_item = event_attributes.merge(item_attr)
 
       post :create, format: :json, event: event_attributes_with_an_unknown_item
