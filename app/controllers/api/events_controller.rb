@@ -8,22 +8,22 @@ module Api
         attributes = super
 
         if (user_identifier = attributes.delete('user_identifier'))
-          attributes[:user] = find_or_create_user user_identifier
+          attributes[:user] = user_by_identifier user_identifier
         end
 
         if (item_identifier = attributes.delete('item_identifier'))
-          attributes[:item] = find_or_create_item(item_identifier)
+          attributes[:item] = item_by_identifier(item_identifier)
         end
 
         attributes
       end
 
-      def find_or_create_item(item_identifier)
-        Item.where(identifier: item_identifier).first_or_create!
+      def item_by_identifier(identifier)
+        Item.where(identifier: identifier).first_or_create!
       end
 
-      def find_or_create_user(user_identifier)
-        User.where(identifier: user_identifier).first_or_create!
+      def user_by_identifier(identifier)
+        User.where(identifier: identifier).first_or_create!
       end
   end
 end
