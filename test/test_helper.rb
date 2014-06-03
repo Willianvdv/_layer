@@ -17,3 +17,7 @@ end
 def stub_authentication
   @controller.stubs(:authenticate_user!)
 end
+
+def stub_authorize
+  @controller.stubs(:authorize_user!)
+end

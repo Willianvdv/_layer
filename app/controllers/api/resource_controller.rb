@@ -19,6 +19,10 @@ module Api
       end
     end
 
+    def index
+      render json: @resources
+    end
+
     protected
 
     def resource_attributes
@@ -32,6 +36,10 @@ module Api
 
     def load_resource
       @resource = model_class.find params[:id]
+    end
+
+    def load_resources
+      @resources = model_class.all()
     end
 
     def model_class

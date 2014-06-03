@@ -5,15 +5,17 @@ class ApiKey
     @keys = keys
   end
 
-  def include?(key)
-    @keys.include? key
-  end
-
   def self.key?(key)
-    instance.include? key
+    instance.keys.include? key
   end
 
-  private
+  def self.power_user?(key)
+    instance.power_user_keys.include? key
+  end
+
+  def power_user_keys
+    ENV['power_user_api_keys'].split(',')
+  end
 
   def keys
     ENV['api_keys'].split(',')
