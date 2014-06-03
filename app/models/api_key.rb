@@ -1,4 +1,4 @@
-class ApiKeys
+class ApiKey
   include Singleton
 
   def initialize
