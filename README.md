@@ -66,3 +66,9 @@ When an user_identifier / item_identifier is given and they don't exists. These 
 ```
 curl -H "Content-Type: application/json" -d '{"event": {"user_identifier": "1234", "item_identifier": "sku23", "event": "view"}}' http://localhost:3000/api/events\?api_key\=123
 ```
+
+##### List all registered events
+
+```
+curl -H "Content-Type: application/json" http://localhost:3000/api/events\?api_key\=123
+```
