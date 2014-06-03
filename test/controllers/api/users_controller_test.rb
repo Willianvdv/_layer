@@ -6,6 +6,7 @@ class Api::UsersControllerTest < ActionController::TestCase
   def setup
     @user = create :user
     stub_authentication
+    stub_authorize
   end
 
   def json_response

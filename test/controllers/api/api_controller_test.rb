@@ -7,6 +7,10 @@ module Api
     def index
       render nothing: true
     end
+
+    def create
+      render nothing: true
+    end
   end
 end
 
@@ -17,7 +21,8 @@ class Api::ApiControllerTest < ActionController::TestCase
     with_routing do |set|
       set.draw do
         namespace :api do
-          get 'anonymous', to: 'anonymous#index'
+          get 'anonymous_index', to: 'anonymous#index'
+          get 'anonymous_create', to: 'anonymous#create'
         end
       end
 
@@ -25,16 +30,23 @@ class Api::ApiControllerTest < ActionController::TestCase
     end
   end
 
-  test 'with an api key you have access' do
+  test 'with an normal key you dont have access to indexes' do
     with_anonymous_routes do
       get :index, api_key: 'ABCDE'
+      assert_response :unauthorized
+    end
+  end
+
+  test 'with an api key you have access' do
+    with_anonymous_routes do
+      get :create, api_key: 'ABCDE'
       assert_response :success
     end
   end
 
   test 'without an api key you dont have access' do
     with_anonymous_routes do
-      get :index
+      get :create
       assert_response :unauthorized
     end
   end

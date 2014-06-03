@@ -8,6 +8,7 @@ class Api::EventsControllerTest < ActionController::TestCase
     @item = create :item
 
     stub_authentication
+    stub_authorize
   end
 
   def json_response

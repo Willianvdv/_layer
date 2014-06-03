@@ -6,6 +6,7 @@ class Api::ItemsControllerTest < ActionController::TestCase
   def setup
     @item = create :item
     stub_authentication
+    stub_authorize
   end
 
   def json_response
