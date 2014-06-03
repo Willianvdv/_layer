@@ -2,6 +2,8 @@
 
 module Api
   class EventsController < ResourceController
+    before_filter :load_resources, only: [:index]
+
     private
 
       def resource_attributes
