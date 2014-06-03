@@ -39,7 +39,7 @@ module Api
     end
 
     def load_resources
-      @resources = model_class.all()
+      @resources = model_class.all
     end
 
     def model_class
