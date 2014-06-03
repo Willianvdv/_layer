@@ -12,7 +12,7 @@ module Api
           end
 
           if (item_identifier = attributes.delete('item_identifier'))
-            attributes[:item] = item_by_identifier(item_identifier)
+            attributes[:item] = item_by_identifier item_identifier
           end
         end
       end
