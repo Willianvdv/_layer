@@ -5,4 +5,3 @@ development:
 
 test:
   api_keys: "POWERKEY,ABCDE,"
-  power_user_api_keys: "POWERKEY,"

@@ -2,8 +2,6 @@ SECRET_TOKEN: 'XXXXXXXXXXX'
 
 development:
   api_keys: "POWERKEY,ABCDE,"
-  power_user_api_keys: "POWERKEY,"
 
 test:
   api_keys: "POWERKEY,ABCDE,"
-  power_user_api_keys: "POWERKEY,"

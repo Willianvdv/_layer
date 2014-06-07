@@ -43,11 +43,4 @@ class Api::ApiControllerTest < ActionController::TestCase
       assert_response :unauthorized
     end
   end
-
-  test 'with an normal key you can only create stuff' do
-    with_anonymous_routes do
-      get :index, api_key: 'ABCDE'
-      assert_response :unauthorized
-    end
-  end
 end
