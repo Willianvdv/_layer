@@ -29,6 +29,10 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    appsignal (0.8.11)
+      activesupport (>= 3.0)
+      rack
+      thread_safe
     arel (5.0.1.20140414130214)
     ast (2.0.0)
     builder (3.2.2)
@@ -132,6 +136,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
+  appsignal
   coveralls
   factory_girl
   figaro

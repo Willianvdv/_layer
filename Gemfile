@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'appsignal'
 gem 'rails', '4.1'
 
 gem 'rails-api'
