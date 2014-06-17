@@ -20,11 +20,11 @@ module Api
     end
 
     def item_by_identifier(identifier)
-      Item.where(identifier: identifier).first_or_create!
+      Item.where(identifier: identifier.to_s).first_or_create!
     end
 
     def user_by_identifier(identifier)
-      User.where(identifier: identifier).first_or_create!
+      User.where(identifier: identifier.to_s).first_or_create!
     end
   end
 end
