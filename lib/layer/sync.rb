@@ -13,7 +13,15 @@ module Sync
 
     class ItemPuller < BasePuller
       def pull_all
-        puts Item.all
+        pull_candidates.each do |item|
+          item_data = @pull_implementation.pull_item item
+          item.update_attributes(item_data)
+        end
+      end
+
+      def pull_candidates
+        # TODO: Don't return items with a complete profile
+        Item.all
       end
     end
 
