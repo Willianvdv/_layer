@@ -21,3 +21,5 @@
 coverage/**
 
 api_keys.yml
+
+.rake_tasks
