@@ -1,5 +1,5 @@
 namespace :pull do
-  task :user_data, [:pull_implementation_path, :pull_implementation_class] => :environment do |t, args|
+  task :data, [:pull_implementation_path, :pull_implementation_class] => :environment do |t, args|
     pull_implementation_path = args[:pull_implementation_path]
     pull_implementation_class = args[:pull_implementation_class]
 
@@ -13,5 +13,6 @@ namespace :pull do
     pull_implementation = pull_implementation_class.new
 
     Sync::Pull::UserPuller.new(pull_implementation).pull_all
+    Sync::Pull::ItemPuller.new(pull_implementation).pull_all
   end
 end
