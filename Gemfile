@@ -9,6 +9,7 @@ gem 'active_model_serializers'
 gem 'pg'
 gem 'coveralls', require: false
 gem 'figaro'
+gem 'httparty'
 
 group :development, :test do
   gem 'factory_girl'
