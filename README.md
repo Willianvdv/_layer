@@ -22,7 +22,13 @@ bundle exec rails s
 ## Deploy
 
 ```
-bundle exec cap <stage> deploy
+git push <heroku> <branch>
+```
+
+## Pull the production database to your local machine
+
+```
+heroku pg:pull HEROKU_POSTGRESQL_<db-name> layer_development --app <heroku-app-name>
 ```
 
 ## Usage
