@@ -5,6 +5,12 @@ module Api
     def create
       resource = model_class.new resource_attributes
       if resource.save
+        begin
+          Pusher.trigger 'resources', 'created', resource_attributes
+        rescue Pusher::Error => e
+          # TODO: Catch this exception
+        end
+
         render json: resource
       else
         render status: :bad_request, json: { errors: resource.errors }

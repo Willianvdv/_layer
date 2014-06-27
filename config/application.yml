@@ -1,5 +1,7 @@
 SECRET_TOKEN: 'XXXXXXXXXXX'
 
+pusher_url: 'http://b71e2e9248f03e8ba558:9f09266671fa09769cc1@api-eu.pusher.com/apps/79543'
+
 development:
   api_keys: "POWERKEY,ABCDE,"
 

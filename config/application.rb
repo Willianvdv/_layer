@@ -23,5 +23,10 @@ module Layer
     config.i18n.enforce_available_locales = true
 
     config.autoload_paths += %W(#{config.root}/lib #{config.root}/lib/layer)
+    
+    Pusher.app_id = ENV['pusher_app_id']
+    Pusher.key = ENV['pusher_key']
+    Pusher.secret = ENV['pusher_secret']
+    Pusher.url = ENV['pusher_url']
   end
 end
